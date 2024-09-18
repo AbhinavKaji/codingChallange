@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="todo-details card-body">
+    <div class="row">
+      <h5>Todo Details</h5>
+    </div>
+    <form *ngIf="todo">
+      <div class="mb-3 row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="name" class="form-label">Todo Name</label>
+        </div>
+        <div class="col">
+          <input type="text" id="name" [(ngModel)]="todo.name" name="name" class="form-control">
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <input type="checkbox" id="complete" [(ngModel)]="todo.complete" name="complete" class="form-check-input">
+          </div>
+          <div class="col-auto">
+            <label for="complete" class="form-check-label">Complete</label>
+          </div>
+          <div class="col">
+            <input type="date" id="dateCompleted" [(ngModel)]="todo.dateCompleted" name="dateCompleted"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="user" class="form-label">User</label>
+        </div>
+        <div class="col">
+          <select id="user" [(ngModel)]="todo.userId" name="user" class="form-control">
+            <option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <button type="button" class="btn btn-danger" (click)="deleteTodo()">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="saveTodo()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="user-list">
+  <h5>Users</h5>
+  <select class="form-select" size="10" aria-label="Size 3 select example">
+    <option *ngFor="let user of users"
+    class="list-group-item"
+    [class.active]="user.id === selectedUserId"
+    (click)="selectUser(user.id)">
+    {{ user.userName }}</option>
+  </select>
+</div>

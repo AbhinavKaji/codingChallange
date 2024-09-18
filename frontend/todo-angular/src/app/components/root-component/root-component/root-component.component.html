@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <app-todo-list [userId]="selectedUserId" (todoSelected)="onTodoSelected($event)" (todoCreated)="onTodoCreated()"></app-todo-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <app-todo-details [todo]="selectedTodo" [users]="users"></app-todo-details>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

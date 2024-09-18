@@ -1,0 +1,15 @@
+<div class="todo-list">
+  <div class="row">
+    <div class="col-md-6"><h5>Todo List</h5></div>
+    <div class="col-md-6 text-end"><button class="btn btn-primary mb-2" (click)="addTodo()">Add Todo</button></div>
+  </div>
+  <ul class="list-group">
+  </ul>
+  <select class="form-select" size="10" aria-label="Size 3 select example">
+    <option *ngFor="let todo of todos"
+    class="list-group-item"
+    [class.active]="todo.id === selectedTodoId"
+    (click)="selectTodo(todo)">
+    {{ todo.name }}</option>
+  </select>
+</div>
